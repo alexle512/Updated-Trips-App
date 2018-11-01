@@ -1,0 +1,41 @@
+<html>
+<head> 
+<title> Travel App</title>
+ <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+ <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<h2>Travel App</h2>
+
+
+
+<h2> Added Destinations </h2>
+<form action ="/adddestination" method="POST">
+
+<input type="text" name="newdestination" placeholder="add new destination">
+<input type="submit" value="Add Destination">
+
+</form>
+
+<h2> Past Destinations </h2>
+
+<ul>
+    {{#destination}}
+    <form action="/delete" method="POST">
+        <li class="citys">{{city}} <input type="hidden" name="id" value={{id}}> <input type="submit" value="Delete"></li>
+    </form>
+    {{/destination}}
+</ul>
+
+{{#complete}}
+<button formaction="/removedestination" type="submit" id="top" > Remove </button>
+
+{{/complete}}
+</div>
+
+
+
+</body>
+</html>
